@@ -218,10 +218,16 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
 			<xs:element name="Extension" type="tt:FrameExtension" minOccurs="0"/>
 			<xs:element name="SceneImageRef" type="xs:anyURI" minOccurs="0"/>
 			<xs:element name="SceneImage" type="xs:base64Binary" minOccurs="0"/>
+			<xs:element name="GeoLocation" type="tt:GeoLocation" minOccurs="0">
+				<xs:annotation><xs:documentation>Optional GeoLocation the center of the frame points to.</xs:documentation></xs:annotation>
+			</xs:element>
 			<xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>	<!-- reserved for ONVIF -->
 		</xs:sequence>
 		<xs:attribute name="UtcTime" type="xs:dateTime" use="required"/>
 		<xs:attribute name="Colorspace" type="xs:string">
+			<xs:annotation><xs:documentation>Default color space of Color definitions in frame. Valid values are "RGB" and "YCbCr". Defaults to "YCbCr".</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Location" type="xs:string">
 			<xs:annotation><xs:documentation>Default color space of Color definitions in frame. Valid values are "RGB" and "YCbCr". Defaults to "YCbCr".</xs:documentation></xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="Source" type="xs:string">
