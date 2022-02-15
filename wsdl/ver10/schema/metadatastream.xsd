@@ -129,6 +129,12 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
 			<xs:enumeration value="Other"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="LocationType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="FrameCenter"/>
+			<xs:enumeration value="Camera"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:complexType name="StringLikelihood">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
@@ -227,8 +233,8 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
 		<xs:attribute name="Colorspace" type="xs:string">
 			<xs:annotation><xs:documentation>Default color space of Color definitions in frame. Valid values are "RGB" and "YCbCr". Defaults to "YCbCr".</xs:documentation></xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="Location" type="xs:string">
-			<xs:annotation><xs:documentation>Default color space of Color definitions in frame. Valid values are "RGB" and "YCbCr". Defaults to "YCbCr".</xs:documentation></xs:annotation>
+		<xs:attribute name="LocationType" type="xs:string">
+			<xs:annotation><xs:documentation>Location reference as defined in tt:LocationType. Defaults to 'FrameCenter'.</xs:documentation></xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="Source" type="xs:string">
 			<xs:annotation>
